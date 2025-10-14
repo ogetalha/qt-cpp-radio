@@ -48,6 +48,11 @@ jobs:
           Terminal=false
           EOF
           
+          # Create a simple icon (PNG format)
+          mkdir -p AppDir/usr/share/icons/hicolor/256x256/apps
+          # Create a simple colored square as placeholder icon
+          convert -size 256x256 xc:#4A90E2 -pointsize 72 -fill white -gravity center -annotate +0+0 "QR" AppDir/usr/share/icons/hicolor/256x256/apps/qtradio.png || echo "ImageMagick not available, skipping icon"
+          
           # Create AppRun
           cat > AppDir/AppRun <<'EOF'
           #!/bin/bash
