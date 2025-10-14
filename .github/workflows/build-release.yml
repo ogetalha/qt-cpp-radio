@@ -14,10 +14,11 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Install Qt
-        uses: jurplel/install-qt-action@v3
+        uses: jurplel/install-qt-action@v4
         with:
-          version: '6.8.0'
+          version: '6.5.3'
           modules: 'qtdeclarative'
+          cache: true
           
       - name: Install dependencies
         run: |
@@ -86,11 +87,12 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Install Qt
-        uses: jurplel/install-qt-action@v3
+        uses: jurplel/install-qt-action@v4
         with:
-          version: '6.8.0'
+          version: '6.5.3'
           arch: 'win64_msvc2019_64'
           modules: 'qtdeclarative'
+          cache: true
           
       - name: Setup MSVC
         uses: microsoft/setup-msbuild@v2
@@ -133,15 +135,16 @@ jobs:
           path: QtRadio-Windows-x64.zip
 
   build-macos:
-    runs-on: macos-latest
+    runs-on: macos-13
     steps:
       - uses: actions/checkout@v4
       
       - name: Install Qt
-        uses: jurplel/install-qt-action@v3
+        uses: jurplel/install-qt-action@v4
         with:
-          version: '6.8.0'
+          version: '6.5.3'
           modules: 'qtdeclarative'
+          cache: true
           
       - name: Install dependencies
         run: |
