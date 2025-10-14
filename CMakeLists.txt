@@ -12,7 +12,7 @@ pkg_check_modules(MPG123 REQUIRED IMPORTED_TARGET libmpg123)
 
 # PortAudio
 pkg_check_modules(PORTAUDIO REQUIRED IMPORTED_TARGET portaudio-2.0)
-qt_standard_project_setup(REQUIRES 6.8)
+qt_standard_project_setup()
 
 qt_add_executable(appqtradio
     main.cpp
